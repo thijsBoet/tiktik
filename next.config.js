@@ -1,7 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
-  swcMinify: true,
-}
+	reactStrictMode: true,
+	swcMinify: true,
+	images: {
+		domains: [
+			'yt3.ggpht.com',
+			'https://yt3.ggpht.com',
+			'lh3.googleusercontent.com',
+		],
+	},
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
