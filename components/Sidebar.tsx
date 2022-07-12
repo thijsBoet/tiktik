@@ -22,52 +22,33 @@ const Sidebar = () => {
 	return (
 		<div>
 			<div
-				className="block xl:hidden m-2 ml-2 mt-3 text-xl"
-				onClick={() => setShowSidebar((prev) => !prev)}
+				className='block xl:hidden m-2 ml-2 mt-3 text-xl'
+				onClick={() => setShowSidebar(prev => !prev)}
 			>
 				{showSidebar ? <ImCancelCircle /> : <AiFillHome />}
 			</div>
 			{showSidebar && (
-				<div className="xl:w-400 w-20 flex flex-col mb-10 border-r-2 border-gray-100 xl:border-0 p-3 justify-start">
-					<div className="xl:border-b-2 border-gray-200 xl:pb-4">
-						<Link href="/">
+				<div className='xl:w-400 w-20 flex flex-col mb-10 border-r-2 border-gray-100 xl:border-0 p-3 justify-start'>
+					<div className='xl:border-b-2 border-gray-200 xl:pb-4'>
+						<Link href='/'>
 							<div className={normalLink}>
-								<p className="text-2xl">
+								<p className='text-2xl text-[#F51997]'>
 									<AiFillHome />
 								</p>
-								<span className="text-xl hidden xl:block">For You</span>
+								<span className='text-xl hidden xl:block text-[#F51997]'>
+									For You
+								</span>
 							</div>
 						</Link>
 					</div>
-					{!userProfile && (
-						<div className="px-2 py-4 hidden xl:block">
-							<p className="text-gray-400">Log in to like and comment on videos</p>
-							<div className="pr-4">
-								{/* <GoogleLogin
-									clientId="1020990981810-qjqjqjqjqjqjqjqjqjqjqjqjqjqjqjq.apps.googleusercontent.com"
-									render={renderProps => (
-										<button
-											className='bg-white text-lg text-[#F51997] border-1 border-1-[#F51997] font-semibold px-6 py-3 rounded-md outline-none w-full mt-3 hover:text-white hover:bg-[#F51997] cursor-pointer'
-											onClick={renderProps.onClick}
-											disabled={renderProps.disabled}
-										>
-											Log in
-										</button>
-									)}
-									onSuccess={() => { }}
-									onFailure={() => { }}
-									cookiePolicy={'single_host_origin'}
-								/> */}
-							</div>
-						</div>
-					)}
+
 					<Discover />
 					<SuggestedAccounts />
 					<Footer />
 				</div>
 			)}
 		</div>
-	)
+	);
 }
 
 export default Sidebar
